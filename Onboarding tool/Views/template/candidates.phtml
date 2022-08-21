@@ -1,0 +1,14 @@
+<!-- Displays the table used in candidates list -->
+<?php require_once 'candidatecontroller.php'; ?>
+
+<div id="table-wrapper">
+
+    <div class="cand-container">
+
+        <?php $users = new viewUser();
+        $users->showAllUsers();
+        ?>
+    </div>
+</div>
+
+<link rel="stylesheet" href='css/cand.css'>

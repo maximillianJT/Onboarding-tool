@@ -1,0 +1,227 @@
+.indexlogin{
+    display:flex;
+    padding:10%;
+    color: green;
+    background-image: url("../images/white.jpg");
+    background-repeat:no-repeat ;
+    background-size:100% 100% ;
+    align-items: center;
+    justify-content:center ;
+    margin:0%;
+
+
+
+
+
+}
+/* Signup/login form properties*/
+.signup{
+    font-family: Roboto,sans-serif;
+    margin: 5%;
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 10px;
+    color: #ff7057;
+    font-weight: bold;
+    background: white;
+    box-shadow: 5px 5px 15px 3px #FFC7C7;
+    border-style: groove;
+    border-color: #ff7057;
+
+}
+.signup h3{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.signup p{
+    margin:5%;
+}
+.signupform button{
+    margin:5%;
+}
+
+.signupform{
+    margin: 1%;
+    background-color: white;
+}
+
+.form-control{
+    background-color: white;
+    border: 0;
+}
+.form-control input{
+    margin:2%;
+    border: 1px solid #efefef;
+    width: 80%;
+}
+
+
+/* logo banner properties*/
+.logo_banner{
+    height: 10%;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.logo_banner h1{
+    display:grid;
+    align-items: center;
+    font-family: Roboto,sans-serif;
+    font-weight: 1000;
+    font-size: 25px;
+    font-style:normal;
+    color: #ff7057;
+    margin:10px;
+    line-height: 28px;
+    overflow-x: hidden;
+}
+
+.logo_banner img{
+    height: 100%;
+    width: auto;
+}
+/* Profile container properties*/
+
+.profile_container{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+
+
+}
+/* Card container */
+.data_container{
+    border:
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    width: 230px;
+    height:350px;
+    margin:10px;
+    border-radius: 15px 15px 15px 15px;
+    background-color:whitesmoke;
+    opacity: 0.8;
+    color: black;
+    font-family: Roboto,sans-serif;
+}
+/* card top */
+.profile_top{
+    height:40%;
+    margin :15%;
+    background-color: lightgrey;
+    border-radius: 10px;
+    background-size:cover;
+
+}
+
+.candidate_ID{
+    background-color:#f08a81 ;
+    border-radius: 10px 10px 10px 10px;
+    margin:0px 5px 0px 5px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    height:7%;
+
+}
+.candidate_name{
+    background-color:#ffefed ;
+}
+.candidate_lastN{
+    background-color: #fed2cd;
+}
+.phoneNumber{
+    background-color:#ffb8b0 ;
+}
+.email_s{
+    background-color: #ff7057;
+    height:40px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.data_container:hover{
+    background-color: rgb(62,62,62);
+    transform: scale(1.03);
+    transition:all 1s ease;
+    box-shadow: 10px 5px;
+}
+/* Progress Wheel */ 
+
+.progress {
+  width: 140px;
+  height: 140px;
+  background: none;
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  border-color: #eee;
+}
+
+.progress .progress-left {
+  left: 0;
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+  border-color: #ff7057;
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+.progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+

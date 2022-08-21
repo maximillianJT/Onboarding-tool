@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Page</title>
+
+<!-- Links to CSS -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link href="./css/CSSmax.css" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="./css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Includes the header -->
+<?php include('./Views/template/krmHeader.phtml') ?>
+
+<!-- Nav Bar -->
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./home.php">
+                            <span data-feather="home"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href= " ./candidates.php">
+                            <span data-feather="file"></span>
+                            Candidate list
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href= " ./addCandidate.php">
+                            <span data-feather="file"></span>
+                            Add Candidate
+                        </a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link " href="./offer.php">
+                            <span data-feather="circle"></span>
+                            Job offers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./training.php">
+                            <span data-feather="users"></span>
+                            Training
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./list.php">
+                            <span data-feather="bar-chart-2"></span>
+                            To Do List
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Settings</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./admin.php">
+                            <span data-feather="file-text"></span>
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!-- Main body  -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <h2>Admin Page</h2>
+
+            <!-- Display the admin users -->
+            <table class="table table-dashboard mb-0 table-borderless fs--1 border-200">
+              <thead class="table-header">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Admin Level</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <!-- Manages the displaying of the results from the database -->
+               <?php foreach($view->dashboardDataSet as $userData){
+                echo '<tr class="tableRow">';
+                echo '  <td class="tableData">'.$userData->getUserID().'</td>';
+                echo '  <td class="tableData">'.$userData->getfirstName().'</td>';
+                echo '  <td class="tableData">'.$userData->getlastName().'</td>';
+                echo '  <td class="tableData">'.$userData->getUsername().'</td>';
+                echo '  <td class="tableData">'.$userData->getAdminLevel().'</td>';
+
+                // Displays a form which allows you to delete a user (WARNING: You will be shown an error if your user is currently assigned to any candidates in the job offers)
+                echo '  <td class="tableData"><form method="POST"><input type="hidden" name="id" value="'.$userData->getUserID() . '""><input class="btn btn-danger" style="width: 100%;" name="delete" type="submit" value="Delete"/></form></td>';
+                echo '</tr>';
+            }
+            ?>
+              </tbody>
+            </table>
+
+            <!-- The form that adds new users -->
+            <form method="POST">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+              </div>
+                            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" >
+              </div>
+                            <div class="form-group">
+                <label>First name</label>
+                <input type="text" class="form-control" name="firstName" >
+              </div>
+                            <div class="form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control" name="lastName" >
+              </div>
+                            <div class="form-group">
+                <label>Admin level</label>
+                <input list="nums" class="form-control" name="adminLevel" >
+                  <datalist id="nums">
+                      <option value="0">
+                      <option value="1">
+                      <option value="2">
+                    </datalist>
+                <input type="submit" name="submit">
+              </div>
+</form>
+        </main>
+    </div>
+</div>
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="./js/dashboard.js"></script>
+</body>
+</html>
+
+

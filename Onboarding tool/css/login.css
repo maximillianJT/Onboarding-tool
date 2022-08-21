@@ -1,0 +1,18 @@
+body, head {
+	background-color: #efefef;
+}
+
+.btn-outline-krm{
+	color: #fff;
+	background-color: #ff7057;
+	border-color: #efefef;
+}
+.btn-outline-krm:hover{
+	color: #ff7057;
+	background-color: #fff;
+	border-color: #ff7057;
+}
+
+.bg-krm{
+    background-color: rgb(14, 27, 44);
+}

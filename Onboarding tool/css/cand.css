@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding: 0;
+    outline: 0;
+
+}
+.cand-background{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background: rgb(195,34,34);
+    background: -moz-linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,77,45,0.7837078651685393) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,77,45,0.7837078651685393) 100%);
+    background: linear-gradient(0deg, rgba(195,34,34,1) 0%, rgba(253,77,45,0.7837078651685393) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c32222",endColorstr="#fd4d2d",GradientType=1);
+    opacity: .7;
+}
+.cand-container{
+    width: 100%;
+}
+.cand-table{
+    z-index: 2;
+    font-size: 0.9rem;
+    overflow: auto;
+    width: 100%;
+    opacity: 100%;
+    font-weight: 400;
+    max-height: 600px;
+    table-layout: auto;
+}
+#th,tr:hover {
+    background-color: #dddddd;
+
+}
+
+td , th{
+    padding: 5px 10px;
+    text-align: left;
+
+}
+th{
+    background-color: rgb(255, 112, 87);
+    color: #fafafa;
+    font-weight:200;
+
+}
+tr hover{
+    background-color: #ba68c8;
+}
+tr{
+
+    background-color: #fafafa;
+}
+
+tr:nth-child(even){
+    background-color: #eeeeee;
+}
+
+#cand-search{
+
+
+    opacity: 100%;
+    z-index: 2;
+    margin:50px;
+    min-width:600px;
+}
+.cand-btn{
+
+    text-align: center;
+    padding: 10px;
+    background-color: #dddddd;
+    opacity: 100%;
+    color: black;
+    z-index: 2;
+    float: left;
+
+}
+
+#table-wrapper{
+
+    display: flex;
+    flex-direction: row;
+    min-width: 500px;
+    margin:15px;
+}
+table, th, td {
+    text-align: center;
+}
+
